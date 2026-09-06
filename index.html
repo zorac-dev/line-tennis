@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#e9f7ef" />
+  <title>LINE Tennis</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <main>
+    <section id="lobby" class="panel">
+      <h1>LINE Tennis</h1>
+      <p class="sub">スマホ横持ち・2〜4人オンライン対戦</p>
+      <label>ニックネーム<input id="nameInput" maxlength="12" placeholder="Player" /></label>
+      <div class="row">
+        <button id="createBtn" class="primary">ルームを作る</button>
+        <button id="copyBtn" hidden>招待URLをコピー</button>
+      </div>
+      <div id="roomInfo" class="room-info"></div>
+      <div id="players"></div>
+      <button id="startBtn" class="primary" hidden>試合開始</button>
+      <p class="note">2人: シングルス / 3人: ダブルス＋CPU / 4人: ダブルス</p>
+    </section>
+
+    <section id="game" hidden>
+      <header class="hud">
+        <span id="score">0 - 0</span>
+        <span id="status">READY</span>
+      </header>
+      <canvas id="court" width="1280" height="720"></canvas>
+      <div class="controls">
+        <div id="stick" class="stick"><div id="knob" class="knob"></div></div>
+        <div class="buttons">
+          <button id="strokeBtn" class="action">ストローク</button>
+          <button id="volleyBtn" class="action secondary">ボレー</button>
+        </div>
+      </div>
+      <button id="shareBtn" class="share">LINEで招待</button>
+    </section>
+  </main>
+  <script src="./src/config.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
